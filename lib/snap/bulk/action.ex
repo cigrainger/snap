@@ -129,7 +129,8 @@ defmodule Snap.Bulk.Action.Update do
     :doc,
     :doc_as_upsert,
     :script,
-    :routing
+    :routing,
+    :retry_on_conflict
   ]
 
   @type t :: %__MODULE__{
@@ -139,7 +140,8 @@ defmodule Snap.Bulk.Action.Update do
           doc: map(),
           doc_as_upsert: boolean() | nil,
           script: map() | nil,
-          routing: String.t() | nil
+          routing: String.t() | nil,
+          retry_on_conflict: integer() | nil
         }
 
   @doc false
